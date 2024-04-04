@@ -22,7 +22,7 @@
     ?>
 
     <div class="container">
-        <a href="">
+        <a href="../chat">
             <div class="people">
                 <img class="foto_profil" src="../../aset/profil/01.png" alt="Foto Profil">
                 <div class="nama_pesan">

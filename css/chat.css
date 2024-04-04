@@ -1,0 +1,84 @@
+@media (max-width: 450px) {
+    body .container{
+        margin: 15vh 2.5vw;
+    }
+
+    .container .data_pesan .jam{
+        font-size: small;
+    }
+
+    .data_pesan .isi_pesan .nama{
+        font-size: medium;
+    }
+    .data_pesan .isi_pesan .pesan{
+        font-size: medium;
+    }
+    
+}
+
+.container {
+    /* border: 3px solid red; */
+    margin: 15vh 10vw 5vh;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.container .data_pesan .mini{
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.data_pesan {
+    display: flex;
+    flex-direction: row;
+}
+
+.data_pesan.self{
+   flex-direction: row-reverse;
+}
+
+.data_pesan .isi_pesan{
+    width: 90%;
+    background-color: #E3EEF2;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0 10vw 20px 10px ;
+    box-shadow: -2px 2px 5px rgba(4, 135, 217, 0.25);
+}
+
+.data_pesan.self .isi_pesan{
+    width: 90%;
+    background-color: #E3EEF2;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0 10px 20px 10vw ;
+    box-shadow: -2px 2px 5px rgba(4, 135, 217, 0.25);
+}
+
+.data_pesan.self .isi_pesan .nama{
+    display: none;
+}
+
+.isi_pesan .nama{
+    font-size: large;
+}
+.isi_pesan .pesan{
+    font-size: large;
+}
+
+.data_pesan .jam{
+    width: 100%;
+    text-align: right;
+    font-size: medium;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.5);
+}
