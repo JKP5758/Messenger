@@ -10,7 +10,7 @@
                 <div class="profil">
                     <img class="foto_profil" src="../../aset/profil/01.png" alt="Foto Profil">
                     <div class="data_nama">
-                        <span class="nama">joko Purnomo</span>
+                        <span class="nama">Joko Purnomo</span>
                         <span class="username">jkp</span>
                     </div>
                 </div>

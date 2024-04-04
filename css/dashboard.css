@@ -1,0 +1,78 @@
+@media (max-width: 450px) {
+    body .container{
+        margin: 1vh 2.5vw;
+    }
+
+    .container .people{
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.container {
+    /* border: 3px solid red; */
+    margin: 5vh 10vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.people{
+    width: 100%;
+    background-color: #E3EEF2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    box-shadow: -2px 2px 5px rgba(4, 135, 217, 0.25);
+}
+
+.nama_pesan{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 min(3%, 20px);
+    
+}
+
+.nama_pesan input.nama{
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 5px;
+}
+
+.nama_pesan input.pesan,input.nama{
+    pointer-events: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    white-space: nowrap; /* Pastikan teks tidak membelok */
+    overflow: hidden; /* Sembunyikan teks yang melebihi lebar input */
+    text-overflow: ellipsis; /* Tambahkan elipsis (...) di akhir teks yang terpotong */
+    
+}
+
+.people .waktu{
+    height: 50px;
+}
+
+.people .waktu .jam{
+    pointer-events: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    white-space: nowrap; /* Pastikan teks tidak membelok */
+    overflow: hidden; /* Sembunyikan teks yang melebihi lebar input */
+    text-overflow: ellipsis; /* Tambahkan elipsis (...) di akhir teks yang terpotong */
+    width: 40px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.8);
+}

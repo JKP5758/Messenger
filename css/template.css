@@ -5,6 +5,29 @@
     box-sizing: border-box;
     font-family: poppins;
 }
+body{
+    background-color: #f4f4f4;
+}
+
+#pesan{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/* Color Theme Swatches in Hex */
+.Winter-at-Flathead-Lake-MT-1-hex { color: #0455BF; }
+.Winter-at-Flathead-Lake-MT-2-hex { color: #023373; }
+.Winter-at-Flathead-Lake-MT-3-hex { color: #022859; }
+.Winter-at-Flathead-Lake-MT-4-hex { color: #0487D9; }
+.Winter-at-Flathead-Lake-MT-5-hex { color: #E3EEF2; }
+
+/* Color Theme Swatches in RGBA */
+.Winter-at-Flathead-Lake-MT-1-rgba { color: rgba(3, 84, 191, 1); }
+.Winter-at-Flathead-Lake-MT-2-rgba { color: rgba(1, 51, 114, 1); }
+.Winter-at-Flathead-Lake-MT-3-rgba { color: rgba(1, 40, 89, 1); }
+.Winter-at-Flathead-Lake-MT-4-rgba { color: rgba(3, 135, 216, 1); }
+.Winter-at-Flathead-Lake-MT-5-rgba { color: rgba(227, 238, 242, 1); }
+
 
 
 a{
@@ -15,18 +38,30 @@ ul li{
     list-style: none;
 }
 
+@media (max-width: 450px) {
+    body nav{
+        padding: 0 2.5vh 0 3vh;
+    }
+}
 
 nav{
     z-index: 99;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     min-height: 10vh;
-    background-color: rgba(0, 70, 220, 0.8);
+    background-color: rgba(3, 135, 216, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5vh;
     color: rgb(255, 255, 255);
+
+    transition: all 0.3s;
+}
+
+nav ul li:hover{
+    padding-right: 1vh;
+    justify-content: space-between;
 }
 
 nav ul li{
@@ -47,16 +82,17 @@ nav ul li{
     opacity: 0;
     display: block;
     position: absolute;
-    pointer-events: all 0.15s;
+    pointer-events: none;
+    transition: all 0.15s;
 }
 
 nav ul li:hover .profil .data_nama{
+    z-index: 99;
     pointer-events: auto;
     opacity: 100;
     display: flex;
     position: relative;
     flex-direction: column;
-    align-items: left;
     margin-left: 20px;
     transition: all 0.3s;
     
@@ -70,10 +106,10 @@ nav ul li:hover .profil .data_nama{
 }
 
 .foto_profil{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     transition: all 0.3s;
 }
 
@@ -106,12 +142,12 @@ nav ul li:hover .dropdown{
     position: absolute;
     right: 0;
     
-    background-color: rgba(0, 70, 220, 0.8);
+    background-color: rgba(3, 135, 216, 1);
     border-radius: 0  0 10px 10px ;
 }
 
 .dropdown ul li{
-    min-width: 150px;
+    min-width: 200px;
     padding: 16px;
     text-align: left;
     border-radius: 10px;
@@ -119,7 +155,7 @@ nav ul li:hover .dropdown{
 }
 
 .dropdown ul li:hover{
-    background-color:  rgba(0, 50, 160, 0.75);
+    background-color:  rgba(3, 84, 191, 0.5);
 }
 
 .dropdown ul li a{
