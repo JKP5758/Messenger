@@ -1,0 +1,114 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+body{
+    background-color: #f4f4f4;
+}
+
+@media (max-width: 450px) {
+    .putih .foto_profil{
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .container .putih{
+        height: 20vh;
+    }
+
+    .container .data{
+        padding-top: 30vw;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .container .data input{
+        box-shadow: -2.5px 2.5px 0 0 rgba(3, 84, 191, 0.5) ;
+    }
+
+}
+
+.action{
+    z-index: 99;
+    /* position: fixed; */
+    width: 100%;
+    min-height: 10vh;
+    background-color: rgba(3, 135, 216, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vh;
+    color: rgb(255, 255, 255);
+
+    transition: all 0.3s;
+}
+
+.action .back:hover{
+    background-color: rgba(3, 84, 191, 0.5);
+}
+
+.back {
+    font-weight: bold;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.putih{
+    width: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    height: 40vh;
+}
+
+.foto_profil{
+    border-radius: 50%;
+    width: 50vh;
+    height: 50vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+    transform: translateY(30%);
+}
+
+.data{
+    width: 100%;
+    min-height: 70vh;
+    padding-top: 30vh;
+    background-color: rgba(3, 135, 216, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px 50px 0 0;
+}
+
+.data input{
+    width: fit-content;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: rgba(227, 238, 242, 1);
+    color: rgba(0, 0, 0, 0.8);
+    box-shadow: -5px 5px 0 0 rgba(3, 84, 191, 0.5) ;
+    border: none;
+    pointer-events: none;
+}

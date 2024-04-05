@@ -17,7 +17,7 @@
                 
                 <div class="dropdown">
                     <ul>
-                        <li><a href="">Profil</a></li>
+                        <li><a href="../profil">Profil</a></li>
                         <li><a href="">-</a></li>
                         <li><a href="">-</a></li>
                         <li><a href="../../login/logout.php">LogOut</a></li>

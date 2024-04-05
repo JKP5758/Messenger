@@ -27,7 +27,7 @@
     /* border: 2px solid red; */
     justify-content: space-between;
     flex-direction: row;
-    min-height: auto;
+    min-height: 0;
     position: fixed;
     bottom: 0;
     margin-bottom: 5vw;
