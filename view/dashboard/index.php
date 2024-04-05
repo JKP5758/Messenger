@@ -5,6 +5,11 @@
     if (!isset($_SESSION['id'])) {
         echo "<script>alert('Silahkan Login Terlebih dahulu');window.location='../../login/';</script>";
     }
+
+    $id = $_SESSION["id"];
+
+    $query = mysqli_query($koneksi, "SELECT username, nama, profil FROM user WHERE id = '$id'");
+    $row = mysqli_fetch_assoc($query);
 ?>
 
 <!DOCTYPE html>

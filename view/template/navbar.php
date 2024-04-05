@@ -8,10 +8,10 @@
         <ul>
             <li>
                 <div class="profil">
-                    <img class="foto_profil" src="../../aset/profil/01.png" alt="Foto Profil">
+                    <img class="foto_profil" src="../../aset/profil/<?= $row['profil']?>" alt="Foto Profil">
                     <div class="data_nama">
-                        <span class="nama">Joko Purnomo</span>
-                        <span class="username">jkp</span>
+                        <span class="nama"><?= $row['nama']?></span>
+                        <span class="username"><?= $row['username']?></span>
                     </div>
                 </div>
                 

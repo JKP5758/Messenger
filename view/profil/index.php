@@ -5,6 +5,11 @@
     if (!isset($_SESSION['id'])) {
         echo "<script>alert('Silahkan Login Terlebih dahulu');window.location='../../login/';</script>";
     }
+
+    $id = $_SESSION["id"];
+
+    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id = '$id'");
+    $row = mysqli_fetch_assoc($query);
 ?>
 
 
@@ -22,12 +27,12 @@
     </div>
     <div class="container">
         <div class="putih">
-            <img class="foto_profil" src="../../aset/profil/01.png" alt="">
+            <img class="foto_profil" src="../../aset/profil/<?=$row['profil']?>" alt="">
         </div>
         <div class="data">
-            <input type="text" name="nama" value="Joko Purnomo" id="">
-            <input type="text" name="username" value="jkp" id="">
-            <input type="password" name="password" value="password" id="">
+            <input type="text" name="nama" value="<?=$row['nama']?>" id="">
+            <input type="text" name="username" value="<?=$row['username']?>" id="">
+            <input type="password" name="password" value="<?=$row['password']?>" id="">
         </div>
     </div>
 </body>
