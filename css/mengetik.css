@@ -68,3 +68,7 @@ textarea {
     justify-content: center;
     color: white;
 }
+
+.fas:hover{
+    cursor: pointer;
+}
