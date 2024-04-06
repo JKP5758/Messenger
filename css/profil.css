@@ -112,3 +112,7 @@ body{
     border: none;
     pointer-events: none;
 }
+
+.data input.hide{
+    display: none;
+}

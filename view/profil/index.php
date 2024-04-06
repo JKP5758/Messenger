@@ -8,8 +8,20 @@
 
     $id = $_SESSION["id"];
 
-    $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id = '$id'");
-    $row = mysqli_fetch_assoc($query);
+    $partner = $_GET['id'];
+
+    if ($id == $partner) {
+        $query = mysqli_query($koneksi, "SELECT * FROM user WHERE id = '$id'");
+        $row = mysqli_fetch_assoc($query);
+
+        $hide = "";
+    } else {
+        $query = mysqli_query($koneksi, "SELECT nama, username, profil FROM user WHERE id = '$partner'");
+        $row = mysqli_fetch_assoc($query);
+        $row['password'] = 'none';
+        $hide = "hide";
+    }
+    
 ?>
 
 
@@ -32,7 +44,7 @@
         <div class="data">
             <input type="text" name="nama" value="<?=$row['nama']?>" id="">
             <input type="text" name="username" value="<?=$row['username']?>" id="">
-            <input type="password" name="password" value="<?=$row['password']?>" id="">
+            <input class="<?=$hide?>" type="password" name="password" value="<?=$row['password']?>" id="">
         </div>
     </div>
 </body>
