@@ -80,5 +80,6 @@
     text-align: right;
     font-size: medium;
     font-weight: bold;
+    margin-top: 5px;
     color: rgba(0, 0, 0, 0.5);
 }
