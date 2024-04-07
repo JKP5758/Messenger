@@ -77,5 +77,18 @@
     <?php
         require "../template/mengetik.php";
     ?>
+
+    <div id="bottom"></div>
+
+    <script>
+        window.onload = function() {
+            // Mendapatkan elemen dengan id "bottom"
+            var bottomElement = document.getElementById("bottom");
+
+            // Melakukan pengguliran otomatis ke elemen "bottom"
+            bottomElement.scrollIntoView();
+        };
+    </script>
+
 </body>
 </html>

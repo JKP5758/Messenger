@@ -24,3 +24,16 @@ document.getElementById('submit_button').addEventListener('click', function() {
     // Kirim formulir menggunakan JavaScript
     document.getElementById('myForm').submit();
 });
+
+
+function updateDateTime() {
+    var now = new Date();
+    var jam = now.getHours().toString().padStart(2, '0') + '' + now.getMinutes().toString().padStart(2, '0') + '' + now.getSeconds().toString().padStart(2, '0');
+    var tanggal = now.getFullYear().toString() + '' + (now.getMonth() + 1).toString().padStart(2, '0') + '' + now.getDate().toString().padStart(2, '0');
+
+    document.getElementById('jam').value = jam;
+    document.getElementById('tanggal').value = tanggal;
+}
+
+// Memanggil fungsi updateDateTime setiap detik
+setInterval(updateDateTime, 1000);
