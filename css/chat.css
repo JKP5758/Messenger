@@ -19,7 +19,7 @@
 .container {
     /* border: 3px solid red; */
     margin: 15vh 10vw 5vh;
-    min-height: 80vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
@@ -42,7 +42,7 @@
 }
 
 .data_pesan .isi_pesan{
-    width: 90%;
+    max-width: 90%;
     background-color: #E3EEF2;
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@
 }
 
 .data_pesan.self .isi_pesan{
-    width: 90%;
+    max-width: 90%;
     background-color: #E3EEF2;
     display: flex;
     flex-direction: column;
@@ -73,7 +73,8 @@
     font-size: large;
 }
 .isi_pesan .pesan{
-    font-size: large;
+    font-size: larger;
+    word-break: break-all;
 }
 
 .data_pesan .jam{

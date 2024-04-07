@@ -43,34 +43,56 @@
                 $hasil_data_partner = mysqli_fetch_assoc($query_data_partner);
 
                 $token = $hasil_relasi['token'];
-                $query_pesan = mysqli_query($koneksi, "SELECT * FROM `data_pesan` WHERE token = '$token' ORDER BY id DESC LIMIT 1");
-                $pesan = mysqli_fetch_assoc($query_pesan);
+                $query_cek_interaksi = mysqli_query($koneksi, "SELECT token FROM `data_pesan` WHERE token = $token");
+                $row_cek_interaksi = mysqli_fetch_row($query_cek_interaksi);
 
-                $jam = substr($pesan['jam'], 0, 5);
+                if ($row_cek_interaksi >= 1) {   
+                    $query_pesan = mysqli_query($koneksi, "SELECT * FROM `data_pesan` WHERE token = '$token' ORDER BY id DESC LIMIT 1");
+                    $pesan = mysqli_fetch_assoc($query_pesan);
 
-                if ($pesan['pengirim'] == $id) {
-                    $dari = "Anda : ";
-                } else {
-                    $dari = "";
-                }
+                    $jam = substr($pesan['jam'], 0, 5);
+
+                    if ($pesan['pengirim'] == $id) {
+                        $dari = "Anda : ";
+                    } else {
+                        $dari = "";
+                    }    
         ?>
                 
-                <a href="../chat?token=<?=$token?>">
-                    <div class="people">
-                        <img class="foto_profil" src="../../aset/profil/<?=$hasil_data_partner['profil']?>" alt="Foto Profil">
-                        <div class="nama_pesan">
-                            <!-- <span class="nama">joko Purnomo</span> -->
-                            <input type="text" value="<?=$hasil_data_partner['nama']?>" class="nama" id="" readonly>
-                            <input type="text" value="<?=$dari, $pesan['pesan']?>" class="pesan" id="" readonly>
+                    <a href="../chat?token=<?=$token?>">
+                        <div class="people">
+                            <img class="foto_profil" src="../../aset/profil/<?=$hasil_data_partner['profil']?>" alt="Foto Profil">
+                            <div class="nama_pesan">
+                                <!-- <span class="nama">joko Purnomo</span> -->
+                                <input type="text" value="<?=$hasil_data_partner['nama']?>" class="nama" id="" readonly>
+                                <input type="text" value="<?=$dari, $pesan['pesan']?>" class="pesan" id="" readonly>
+                            </div>
+                            <div class="waktu">
+                                <input type="text" value="<?=$jam?>" class="jam" id="" readonly>
+                            </div>
                         </div>
-                        <div class="waktu">
-                            <input type="text" value="<?=$jam?>" class="jam" id="" readonly>
-                        </div>
-                    </div>
-                </a>
+                    </a>
                 
+        <?php 
+                }   else {
+        ?>
 
-        <?php       
+                    <a href="../chat?token=<?=$token?>">
+                        <div class="people">
+                            <img class="foto_profil" src="../../aset/profil/<?=$hasil_data_partner['profil']?>" alt="Foto Profil">
+                            <div class="nama_pesan">
+                                <!-- <span class="nama">joko Purnomo</span> -->
+                                <input type="text" value="<?=$hasil_data_partner['nama']?>" class="nama" id="" readonly>
+                                <input type="text" value="" class="pesan" id="" readonly>
+                            </div>
+                            <div class="waktu">
+                                <input type="text" value="" class="jam" id="" readonly>
+                            </div>
+                        </div>
+                    </a>
+
+        <?php
+                }   
             }
         ?>
     </div>
