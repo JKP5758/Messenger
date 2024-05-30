@@ -1,6 +1,6 @@
 @media (max-width: 450px) {
     body .container{
-        margin: 15vh 2.5vw;
+        margin: 15vh 2.5vw 15vh;
     }
 
     .container .data_pesan .jam{
@@ -18,12 +18,11 @@
 
 .container {
     /* border: 3px solid red; */
-    margin: 15vh 10vw 5vh;
+    margin: 15vh 10vw 15vh;
     min-height: 50vh;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    margin-bottom: 200px;
 }
 
 .container .data_pesan .mini{

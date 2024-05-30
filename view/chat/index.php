@@ -35,59 +35,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title><?=$hasil_data_partner['nama']?></title>
 </head>
-<body>
+<body onload="scrollToBottom()">
     <?php
         require "../template/navbar_chat.php";
-    ?>
-
-    <div class="container">
-
-        <?php
-            $query_pesan = mysqli_query($koneksi, "SELECT * FROM `data_pesan` WHERE token = '$token' ORDER BY id");
-            while ($pesan = mysqli_fetch_assoc($query_pesan)) {
-
-                if ($pesan['pengirim'] == $id) {
-                    $profil = $row['profil'];
-                    $nama = $row['nama'];
-                    $self = "self";
-                } else {
-                    $profil = $hasil_data_partner['profil'];
-                    $nama = $hasil_data_partner['nama'];
-                    $self = "";
-                }
-
-                $jam = substr($pesan['jam'], 0, 5); 
-        ?>
-
-                <div class="data_pesan <?=$self?>">
-                    <img class="foto_profil mini" src="../../aset/profil/<?=$profil?>" alt="Foto Profil">
-                    <div class="isi_pesan">
-                        <span class="nama"><?=$nama?></span>
-                        <p class="pesan"><?=$pesan['pesan']?></p>
-                        <span class="jam"><?=$jam?></span>
-                    </div>
-                </div>
-
-        <?php
-            }
-        ?>
-
-    </div>
-
-    <?php
+        require "chat.php";
         require "../template/mengetik.php";
     ?>
 
-    <div id="bottom"></div>
+    <div id="data-container">
+        <?php
+            require "update.php";     
+        ?>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            function refreshData() {
+                $.ajax({
+                    url: 'update.php?token=<?= $token ?>',
+                    success: function(response) {
+                        // Mengganti konten dari elemen dengan id "data-container" dengan respons dari data.php
+                        $('#data-container').html(response);
+                    }
+                });
+            }
+
+            // Memanggil fungsi refreshData setiap 1 detik
+            setInterval(refreshData, 2500);
+        });
+    </script>
+
+
+    <div id="bottom">
+        <!-- Ini jangan di hapus -->
+
+    </div>
 
     <script>
-        window.onload = function() {
-            // Mendapatkan elemen dengan id "bottom"
-            var bottomElement = document.getElementById("bottom");
-
-            // Melakukan pengguliran otomatis ke elemen "bottom"
-            bottomElement.scrollIntoView();
-        };
+        function scrollToBottom() {
+            // Menggulir halaman ke bawah
+            window.scrollTo(0,document.body.scrollHeight);
+        }
     </script>
 
 </body>

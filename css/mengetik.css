@@ -30,7 +30,8 @@
     min-height: 0;
     position: fixed;
     bottom: 0;
-    margin-bottom: 5vw;
+    margin-top: 0;
+    margin-bottom: 5vh;
     
 }
 
@@ -75,5 +76,5 @@ textarea {
 
 #submit_button{
     border: none;
-    background-color: none;
+    background: none;
 }
