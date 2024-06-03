@@ -98,7 +98,13 @@ body{
     border-radius: 50px 50px 0 0;
 }
 
-.data input{
+.data form, .data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data form input, .data input{
     width: fit-content;
     margin-bottom: 20px;
     text-align: center;
@@ -113,6 +119,49 @@ body{
     pointer-events: none;
 }
 
-.data input.hide{
+.data form input.hide, .data input.hide{
     display: none;
+}
+
+.container.hide{
+    display: none;
+}
+
+/* Cari */
+.cari.hide{
+    display: none;
+}
+
+.cari{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15vh;
+}
+
+.cari form{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cari form input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    box-shadow: -2px 2px 5px rgba(4, 135, 217, 0.25);
+}
+
+input.button{
+    margin-top: 10vh ;
+}
+
+input.button:hover{
+    transform: scale(1.15);
+    pointer-events: all;
 }

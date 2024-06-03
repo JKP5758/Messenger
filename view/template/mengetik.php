@@ -1,4 +1,4 @@
-<form id="myForm" action="../chat/proses.php" method="post">
+<form name="FormPesan" id="myForm" action="../chat/proses.php" method="post" onsubmit="return validateForm()">
     <div class="container pesan">
         <input type="hidden" name="token" value="<?=$token?>">
         <input type="hidden" name="pengirim" value="<?=$id?>">

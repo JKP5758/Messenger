@@ -13,6 +13,7 @@
 
     if ($cek_user > 0) {
         $_SESSION['id'] = $data_user['id'];
+        $_SESSION['username'] = $data_user['username'];
         header("location: ../view/dashboard");
     } else {
         echo "<script> alert('Username / Password Salah'); window.location.href = '../login';</script> ";

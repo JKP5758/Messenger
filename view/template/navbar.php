@@ -18,7 +18,7 @@
                 <div class="dropdown">
                     <ul>
                         <li><a href="../profil?id=<?=$id?>">Profil</a></li>
-                        <li><a href="">-</a></li>
+                        <li><a href="../tambah">Tambah Chat</a></li>
                         <li><a href="">-</a></li>
                         <li><a href="../../login/logout.php">LogOut</a></li>
                     </ul>
