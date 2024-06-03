@@ -3,7 +3,11 @@
     require "../koneksi.php";
 
     if (isset($_SESSION['id'])) {
-        echo "<script>alert('Anda Telah Login');window.location='../view/dashboard/';</script>";
+        if ($_SESSION['id'] != 1){
+            echo "<script> alert('Kamu Tidak Memiliki Akses'); window.location.href = '../login';</script> ";
+        }
+    } else {
+        echo "<script> alert('Kamu Tidak Memiliki Akses'); window.location.href = '../login';</script> ";
     }
 ?>
 
@@ -14,12 +18,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="icon" href="../aset/img/favicon.png" type="image/png">
-    <title>login</title>
+    <title>Register</title>
 </head>
 <body>
     <div class="container">
-        <form action="proses_login.php" method="POST">
-            <h2>Login</h2>
+        <form action="proses_register.php" method="POST" enctype="multipart/form-data">
+            <h2>Register</h2>
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
             <div class="input-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
@@ -28,8 +36,11 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-            <button type="submit">Login</button>
-            <a class="button" href="https://wa.me/+6282313921367?text=Halo%2C%20aku%20mau%20daftar%0A%0ANama%20%3A%20%0Ausername%20%3A%20%0Apassword%20%3A%20%0A%0AFoto%20Profil%20%3A%20%28Silakan%20langsung%20kirim%20gambarnya%29">Register</a>
+            <div class="input-group">
+                <label for="file">Foto Profil</label>
+                <input type="file" name="file" id="file">
+            </div>
+            <button type="submit">Register</button>
         </form>
     </div>
 </body>

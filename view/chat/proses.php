@@ -19,7 +19,6 @@
     if ($query) {
         // Redirect pengguna ke halaman sebelumnya setelah penyisipan data ke database
         header("Location: {$_SERVER['HTTP_REFERER']}");
-        exit;
     } else {
         // Penanganan kesalahan jika kueri gagal dieksekusi
         echo "Terjadi kesalahan saat menyimpan pesan.";

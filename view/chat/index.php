@@ -32,7 +32,9 @@
     <link rel="stylesheet" href="../../css/chat.css">
     <link rel="stylesheet" href="../../css/template.css">
     <link rel="stylesheet" href="../../css/mengetik.css">
+    <link rel="icon" href="../../aset/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../../javascript/chat.js"></script>
     <title><?=$hasil_data_partner['nama']?></title>
 </head>
 <body onload="scrollToBottom()">
@@ -55,7 +57,7 @@
         $(document).ready(function() {
             function refreshData() {
                 $.ajax({
-                    url: 'update.php?token=<?= $token ?>',
+                    url: '../chat/update.php?token=<?= $token ?>',
                     success: function(response) {
                         // Mengganti konten dari elemen dengan id "data-container" dengan respons dari data.php
                         $('#data-container').html(response);

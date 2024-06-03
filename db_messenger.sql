@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2024 pada 13.20
+-- Waktu pembuatan: 03 Jun 2024 pada 20.46
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -37,6 +37,15 @@ CREATE TABLE `data_pesan` (
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data untuk tabel `data_pesan`
+--
+
+INSERT INTO `data_pesan` (`id`, `token`, `pengirim`, `penerima`, `pesan`, `jam`, `tanggal`) VALUES
+(1, 1001, 1, 2, 'p', '20:08:52', '2024-06-03'),
+(2, 1001, 1, 2, 'oi', '00:36:38', '2024-06-04'),
+(3, 1007, 6, 2, 'oi', '01:45:26', '2024-06-04');
+
 -- --------------------------------------------------------
 
 --
@@ -55,9 +64,10 @@ CREATE TABLE `relasi` (
 --
 
 INSERT INTO `relasi` (`token`, `id_user1`, `id_user2`, `update_id`) VALUES
-(1001, 1, 2, 0),
+(1001, 1, 2, 1),
 (1002, 1, 3, 0),
-(1006, 2, 3, 3);
+(1006, 2, 3, 3),
+(1007, 6, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -78,9 +88,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `nama`, `password`, `profil`) VALUES
-(1, 'jkp', 'Joko Purnomo', 'admin_192.168.43.1', '01.png\r\n'),
-(2, 'tes', 'Beta Tester', 'password', '02.jpg'),
-(3, 'jonmek', 'Jhonatan Mecanik', 'password', '03.png');
+(1, 'jkp', 'Joko Purnomo', '$2y$10$7ZTHWIRQeAhRsoNN0korZen7xrDXbRRVnP3RzagKWc8n1lMpM/0L2', '01.png\r\n'),
+(2, 'tes', 'Beta Tester', '$2y$10$op5kgOqpBhhRp/uD9HIKRu0e1soZDpi2xS.hcMKTZBo5NAOG9uqV.', '02.jpg'),
+(3, 'jonmek', 'Jhonatan Mecanik', '$2y$10$op5kgOqpBhhRp/uD9HIKRu0e1soZDpi2xS.hcMKTZBo5NAOG9uqV.', '03.png'),
+(6, 'asma', 'Asep Maulana', '$2y$10$AmUcemFQgYTY9a3EpON5AOErZcz8ziu0Y1vdO0n0uos7YG0EcgafW', 'STK-20230512-WA0014.png');
 
 --
 -- Indexes for dumped tables
@@ -117,19 +128,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `data_pesan`
 --
 ALTER TABLE `data_pesan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `relasi`
 --
 ALTER TABLE `relasi`
-  MODIFY `token` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1007;
+  MODIFY `token` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1008;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

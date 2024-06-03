@@ -9,5 +9,3 @@
         <button type="submit" id="submit_button"><span class="fas fa-paper-plane"></span></button>
     </div>
 </form>
-
-<script src="../../javascript/chat.js"></script>

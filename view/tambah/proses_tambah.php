@@ -28,7 +28,7 @@
     } else {
         $row = mysqli_fetch_assoc($query_check);
         $token = $row['token'];
-        header("Location: ../chat?token=$token");
+        header("Location: ../chat/?token=$token");
     }
 
 ?>

@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/dashboard.css">
     <link rel="stylesheet" href="../../css/template.css">
+    <link rel="icon" href="../../aset/img/favicon.png" type="image/png">
     <title>Messenger</title>
 </head>
 <body>
@@ -59,7 +60,7 @@
                     }    
         ?>
                 
-                    <a href="../chat?token=<?=$token?>">
+                    <a href="../chat/?token=<?=$token?>">
                         <div class="people">
                             <img class="foto_profil" src="../../aset/profil/<?=$hasil_data_partner['profil']?>" alt="Foto Profil">
                             <div class="nama_pesan">
@@ -77,7 +78,7 @@
                 }   else {
         ?>
 
-                    <a href="../chat?token=<?=$token?>">
+                    <a href="../chat/?token=<?=$token?>">
                         <div class="people">
                             <img class="foto_profil" src="../../aset/profil/<?=$hasil_data_partner['profil']?>" alt="Foto Profil">
                             <div class="nama_pesan">
